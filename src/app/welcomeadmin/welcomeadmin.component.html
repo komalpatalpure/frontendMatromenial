@@ -1,0 +1,122 @@
+<div> <nav class="navbar navbar-light" style=" background-color: transparent;">
+    <ul class="navbar-nav">
+
+      <li class="nav-item">
+        <h6 style="color:red; font-size: 30; background-color: white;"><i><b>&nbsp;  &nbsp;
+            <img class="rounded" src="https://i.imgur.com/Ke8mQmo.jpg" width="30">
+                admin@gmail.com&nbsp;&nbsp;</b></i></h6>  </li>
+  
+
+    </ul>
+
+      <button  class="btn btn-light btn-rounded"  type="button"  >
+          <a routerLink="/home" style="color: red;"><b> &nbsp; Logout &nbsp; </b></a>   
+               <span class="caret"></span></button>
+
+               
+</nav></div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h1 style="text-align: center; color:white;  background-image: linear-gradient(to left, #c1b7de, rgb(235, 253, 133));">Brides / Grooms</h1><br>
+        <div class="row" >
+             
+                  <div class="col-sm-4"></div>
+                  <div class="col-sm-4">
+                       
+                  </div>
+                  <div class="col-sm-4"></div>
+          </div>           
+      </div>
+  
+    
+    <div class="panel-body">
+      <table  class="table table-hover table-sm" datatable [dtOptions]="dtOptions"
+      [dtTrigger]="dtTrigger"  >
+      <!-- <caption *ngIf="deleteMessage" style="color: blue;">{{message}}</caption> -->
+            <thead class="thead-light">
+                <tr style="color: white; background-color: black;">
+                  <th> Id</th>
+                  <th> btype</th>
+                  <th> customerName</th>
+                  <th>age</th>
+                  <th>email</th>
+                  <th>maritalstatus</th>
+                  <th>Account Status</th>
+                  <th>Action</th>
+                  <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                 <tr *ngFor="let user of userlist " style="color: white; background-color: gray;">
+                  <td>{{user.id}}</td>
+                  <td>{{user.btype}}</td>
+                  <td>{{user.customerName}}</td>
+                  <td>{{user.age}}</td>
+                  <td>{{user.email}}</td>
+                  <td>{{user.maritalstatus}}</td>
+                  <td  style="color: yellow;">{{user.status}}</td>
+                  <td><button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#exampleModal"   (click)="UserDetails(user)" style="color: black;">
+                     details
+                  </button>
+            </td> 
+            <td><button type="button" class="btn btn-outline-danger"    (click)="userRemove(user.id)" style="color: black;">
+             Delete
+            </button>
+      </td> 
+                  </tr> 
+            </tbody><br>
+        </table>   
+    </div>
+  </div> 
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        
+        <div class="modal-body">
+          <table  class="table table-hover table-sm" >
+              <thead class="thead-light">
+                  <tr style="color:#ff7300;  background-color: rgb(54, 39, 39);">
+                     <th>Customer Details</th>
+                    </tr>
+                    <tr style="color:gray; background-color: rgb(226, 233, 163);">
+                   <th><b class="names"> btype :</b> account.btype</th>
+                   </tr>
+                   <tr style="color:gray; background-color: rgb(226, 233, 163);">
+                   <th><b class="names">  btype :</b> {{account.btype}}</th>
+                   </tr>
+                   <tr style="color:gray; background-color: rgb(226, 233, 163);">
+                   <th><b class="names">  customerName :</b> {{account.customerName}}</th></tr>
+                   <tr style="color:gray; background-color: rgb(226, 233, 163);">
+                   <th><b class="names"> age :</b> {{account.age}}</th></tr>
+                   <tr style="color:gray; background-color: rgb(226, 233, 163);">
+                   <th><b class="names"> email :</b> {{account.email}}</th></tr>
+                   <tr style="color:gray; background-color: rgb(226, 233, 163);">
+                   <th><b class="names"> maritalstatus : </b>{{account.maritalstatus}}</th></tr>
+                   <tr style="color:gray; background-color: rgb(226, 233, 163);">
+                   <th><b class="names">  dateOfBirth :</b> {{account.dateOfBirth}}</th></tr>
+                   <tr style="color:gray; background-color: rgb(226, 233, 163);">
+                   <th> <b class="names"> education : </b>{{account.education}}</th></tr>
+                   <tr style="color:gray; background-color: rgb(226, 233, 163);">
+                   <th><b class="names"> profession :</b> {{account.profession}}</th></tr>
+                   <tr style="color:gray; background-color: rgb(226, 233, 163);">
+                   <th><b class="names"> familyDetails :</b> {{account.familyDetails}}</th></tr>
+                   <tr style="color:gray; background-color: rgb(226, 233, 163);">
+                   <th><b class="names"> religion : </b>{{account.religion}}</th></tr>
+                   <tr style="color:gray; background-color: rgb(226, 233, 163);">
+                   <th><b class="names"> Income : </b>{{account.income}}</th></tr>
+                   <tr style="color:gray; background-color: rgb(226, 233, 163);">
+                   <th><b class="names"> status : </b>{{account.status}}</th></tr>
+             
+
+                   <tr style="color:white; background-color: rgb(215, 206, 206);">
+                    <th><button type="button" class="btn btn-info btn-rounded" data-bs-toggle="modal" data-bs-target="#staticBackdrop"   (click)="ChangeStatus(user)" style="color: black;">
+                      change status
+                    </button></th></tr>
+              </thead>
+              <tbody>
+                 </tbody>
+          </table>
+              </div> </div></div></div>
+
+

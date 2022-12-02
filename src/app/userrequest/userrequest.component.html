@@ -1,0 +1,126 @@
+<div>
+    <nav class="navbar navbar-light" style=" background-color: yellow;">
+
+        <div class="dropdown">
+            <button class="btn btn-light btn-rounded" type="button" data-toggle="dropdown"><b>Menu</b>
+                <span class="caret"></span></button>&nbsp;&nbsp;&nbsp;
+            <ul class="dropdown-menu">
+                <li><a routerLink="/userrequest" class="dropdown-item">notification</a></li>
+                <li><a routerLink="/welcome" class="dropdown-item">Home</a></li>
+                <li> &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-outline-secondary" routerLink="/home"><b>Log
+                            Out</b></button></li>
+
+            </ul>
+        </div>
+        <ul class="navbar-nav">
+
+            <li class="nav-item">
+                <h6 style="color:red; font-size: 30;"><i><b>&nbsp;&nbsp; {{username}}&nbsp;&nbsp;&nbsp; &nbsp;
+                            <img class="rounded" src="https://i.imgur.com/Ke8mQmo.jpg" width="30">
+                        </b></i></h6>
+            </li>
+
+
+        </ul>
+
+
+
+
+    </nav>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h1 style="text-align: center; color:white;">Brides / Grooms</h1><br>
+        <div class="row">
+
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+
+            </div>
+            <div class="col-sm-4"></div>
+        </div>
+    </div>
+
+
+    <div class="panel-body">
+        <table class="table table-hover table-sm" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+            <thead class="thead-light">
+                <tr style="color: white; background-color: black;">
+                    <th> sender</th>
+                    <th> sendertype</th>
+                    <th> senderContact</th>
+                    <th>request</th>
+                    <th>receiver</th>
+                    <th>receivertype</th>
+                    <th> receiverContact</th>
+                    <th>responce</th>
+
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of interactlist " style="color: white; background-color: gray;">
+                    <td>{{user.sender}}</td>
+                    <td>{{user.sendertype}}</td>
+                    <td>{{user.sendercontact}}</td>
+                    <td>{{user.request}}</td>
+                    <td>{{user.receiver}}</td>
+                    <td>{{user.receivertype}}</td>
+                    <td>{{user.receivercontact}}</td>
+                    <td>{{user.responce}}</td>
+
+                    <td><button type="button" class="btn btn-link" data-toggle="modal" data-target="#exampleModal"
+                            (click)="MeetingSheduleID(user)">
+                            Responce
+                        </button>
+                    </td>
+
+                </tr>
+            </tbody><br>
+        </table>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-content">
+
+                        <table class="table table-hover table-sm">
+                            <thead class="thead-light">
+                                <tr style="color:blue">
+                                    <th>Responce</th>
+                                </tr>
+                                <tr style="color:blue">
+
+                                    <div>
+
+                                        <input type="radio" value="Accept" name="groom"
+                                            (change)="onChangeradio($event)" />
+                                        Accept
+                                        <input type="radio" value="Reject" name="groom"
+                                            (change)="onChangeradio($event)">
+                                        Reject
+                                    </div>
+
+                                </tr>
+
+                                <tr>
+                                    <button class='btn btn-primary' (click)="reciverresounce()"
+                                        style="color:bwhitelue ; background-color: blue;">
+                                        Action</button>&nbsp;
+
+                                </tr>
+
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>

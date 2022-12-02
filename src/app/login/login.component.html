@@ -1,0 +1,38 @@
+
+ <div> <nav class="navbar navbar-light" style=" background-color: transparent;">
+    <ul class="navbar-nav">
+
+      <li class="nav-item">
+       <h1 style="color:white; background-color: transparent; text-align:center"><i><b>&nbsp;  &nbsp; Life Partner &nbsp; &nbsp;&nbsp;&nbsp;</b></i></h1>  </li>
+  
+
+    </ul>
+
+      
+      </nav>
+<div class="wrapper">
+    <div class="logo">
+        <img src="../../assets/logo.jpg" alt="">
+    </div>
+    <div class="text-center mt-4 name">
+        Life Partner
+    </div>
+    
+    <form name="form"  (ngSubmit)="save()" ngNativeValidate  class="p-3 mt-3">
+  
+        <div class="form-field d-flex align-items-center">
+            <span class="far fa-user"></span>
+            <input type="email"  id="userName" placeholder="Username"
+            [(ngModel)]="user1.email"  [ngModelOptions]="{standalone: true}" required >
+        </div>
+        <div class="form-field d-flex align-items-center">
+            <span class="fas fa-key"></span>
+            <input type="password"  id="pwd" placeholder="Password"
+            [(ngModel)]="user1.password"  [ngModelOptions]="{standalone: true}" required >
+        </div>
+        <button class="btn mt-3">Login</button>
+    </form>
+    <div class="text-center fs-6">
+        <a routerLink="/new">new user?</a> 
+    </div>
+</div>

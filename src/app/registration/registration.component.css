@@ -1,0 +1,100 @@
+/* Importing fonts from Google */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Reseting */
+
+
+.form-lable{
+  font-weight: bold;
+  color:rgb(89, 29, 89);
+  text-align: center;
+  
+}
+.choice{
+  color:whitesmoke;
+  
+}
+input[type=checkbox], input[type=radio]{
+  font-family: system-ui, sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1.1;
+  grid-template-columns: 2em auto;
+  gap: 0.5em;
+}
+
+  body{
+  
+    font-family: Calibri, Helvetica, sans-serif;
+    background-color: pink;
+  }
+  .container {
+    
+      padding-top: 10px;
+
+    background-color: transparent;
+  }
+  .bagrioundcover{
+    background-image: url("../../assets/bg1.jpg");
+    height: 100;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+  }
+
+  input[type=text], input[type=number],input[type=password], input[type=date], textarea ,select{
+    width: 100%;
+    padding: 10px;
+    margin: 2px 0 10px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+    border-radius: 30px;
+  }
+  input[type=text]:focus, input[type=password]:focus {
+    background-color: orange;
+    outline: none;
+  }
+   div {
+              padding: 10px 0;
+           }
+  hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+  }
+  .registerbtn {
+    background-color: rgb(120, 22, 120);
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 180px;
+    border: none;
+    cursor: pointer;
+    width: 30%;
+    opacity: 0.9;
+    border-radius: 30px;
+    left: 300px;
+    background-image: linear-gradient(to left, #553c9a, red);
+  }
+  .registerbtn:hover {
+    opacity: 1;
+  }
+
+  h1{
+    color: red;
+    text-shadow: 10px;
+
+    font-size: 40px;
+    font-weight: 600;
+    background-image: linear-gradient(to left, #5118ed, red);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+  hr{
+    background-color: green;
+    size: 20px;
+    height: 5px;
+  }
+  
